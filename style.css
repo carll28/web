@@ -1,0 +1,216 @@
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+html{scroll-behavior:smooth}
+body{background:#000;color:white}
+
+header{position:fixed;width:100%;top:0;background:#000;border-bottom:1px solid #8fa0ba;padding:20px 8%;z-index:1000}
+nav{display:flex;justify-content:space-between;align-items:center}
+.logo{font-weight:700;font-size:22px;color:#5eead4}
+nav ul{list-style:none;display:flex;gap:30px}
+nav a{text-decoration:none;color:white;transition:.3s;text-shadow:0 0 10px rgba(94,234,212,.5)}
+nav a:hover{color:#5eead4}
+
+section{padding:120px 8% 60px;text-align:center}
+h1{font-size:40px;margin-bottom:20px}
+
+/* HOME */
+#home{display:flex;justify-content:space-between;align-items:center;text-align:left;min-height:100vh;gap:2.5rem;max-width:60rem;margin:auto;padding:6rem 1.25rem 3rem}
+#home .hero-left{flex:1}
+#home .intro{color:#5eead4;font-weight:700;font-size:1.0625rem;margin:0 0 .25rem;font-family:"Segoe UI",system-ui,Arial,sans-serif}
+#home .hero-name{font-family:"Palatino Linotype",Palatino,Georgia,serif;font-size:clamp(2.5rem,7vw,4.5rem);font-weight:700;line-height:1.05;letter-spacing:0;margin:0 0 1rem;color:#eef2f8}
+#home .lead{font-family:"Segoe UI",system-ui,Arial,sans-serif;font-size:1.25rem;line-height:1.65;color:#eef2f8;max-width:36rem}
+.hero-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.75rem}
+.btn{display:inline-block;min-height:44px;padding:.65rem 1.25rem;border:2px solid #5eead4;border-radius:.6rem;font-family:"Segoe UI",system-ui,Arial,sans-serif;font-weight:700;text-decoration:none;transition:transform .2s ease}
+.btn.primary{background:#5eead4;color:#04211d}
+.btn.ghost{background:transparent;color:#5eead4}
+.btn:hover{transform:translateY(-2px);text-decoration:underline}
+.btn:focus-visible{outline:3px solid #8fb8ff;outline-offset:3px}
+.profile-img{width:19rem;height:19rem;border-radius:50%;object-fit:cover;border:2px solid #5eead4;box-shadow:none}
+
+.highlight{font-size:3rem;color:#5eead4;text-align:center;opacity:0;transform:translateY(-20px);animation:fadeSlideIn 2s forwards}
+@keyframes fadeSlideIn{to{opacity:1;transform:translateY(0)}}
+
+/* ABOUT */
+#about{max-width:60rem;margin:auto;padding:6rem 1.25rem 3rem;text-align:left}
+.about-grid{display:grid;gap:2rem;align-items:center}
+.about-photo{justify-self:center;width:min(100%,20rem);height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:50%;border:2px solid #5eead4}
+.about-intro{background:#16223a;border:1px solid #8fa0ba;border-radius:1rem;padding:2rem;margin-bottom:1.25rem}
+.about-intro h2{font-family:"Palatino Linotype",Palatino,Georgia,serif;font-size:1.9rem;line-height:1.2;margin:0;color:#eef2f8}
+.about-intro h2::after{content:"";display:block;width:3rem;height:.3rem;background:#5eead4;margin-top:.6rem}
+.about-intro p{font-family:"Segoe UI",system-ui,Arial,sans-serif;font-size:1.0625rem;line-height:1.65;color:#eef2f8;margin:1rem 0 0}
+.about-cards{display:grid;gap:1.25rem}
+.about-card{background:#16223a;border:1px solid #8fa0ba;border-radius:1rem;padding:1.25rem 1.5rem}
+.about-card h3{font-family:"Palatino Linotype",Palatino,Georgia,serif;font-size:1.1rem;line-height:1.2;margin:0 0 .3rem;color:#eef2f8}
+.about-card p{font-family:"Segoe UI",system-ui,Arial,sans-serif;font-size:1.0625rem;line-height:1.65;color:#c0cad9;margin:0}
+@media (min-width:48rem){.about-grid{grid-template-columns:20rem 1fr}.about-cards{grid-template-columns:repeat(2,1fr)}}
+
+/* SKILLS */
+#skills{max-width:60rem;margin:auto;padding:6rem 1.25rem 3rem;text-align:left;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center}
+.sec-title{font-family:"Palatino Linotype",Palatino,Georgia,serif;font-size:1.9rem;line-height:1.2;margin:0;color:#eef2f8}
+.sec-title::after{content:"";display:block;width:3rem;height:.3rem;background:#5eead4;margin-top:.6rem}
+.sec-sub{font-family:"Segoe UI",system-ui,Arial,sans-serif;font-size:1.0625rem;color:#c0cad9;margin:1rem 0 0}
+.skill-list{list-style:none;margin:1.5rem 0 0;padding:0;display:grid;gap:1.25rem;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr))}
+.skill-list li{background:#16223a;border:1px solid #8fa0ba;border-radius:1rem;padding:1.5rem;height:100%}
+.skill-list h3{font-family:"Palatino Linotype",Palatino,Georgia,serif;font-size:1.1rem;line-height:1.2;margin:0 0 .6rem;color:#eef2f8}
+.skill-list p{font-family:"Segoe UI",system-ui,Arial,sans-serif;font-size:1.0625rem;line-height:1.65;color:#c0cad9;margin:0}
+@media (min-width:48rem){.skill-list{grid-template-columns:repeat(3,1fr)}}
+
+/* PROJECTS: 3D tilt + cursor spotlight */
+.projects{display:flex;justify-content:center;flex-wrap:wrap;gap:30px;margin-top:40px}
+.project-box{position:relative;width:500px;max-width:100%;border-radius:1rem;overflow:hidden;background:#16223a;border:1px solid #8fa0ba;text-align:center;cursor:pointer}
+.project-box img{display:block;width:100%;height:300px;object-fit:cover;transition:transform .5s ease}
+.project-box::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(94,234,212,.28),transparent 55%);opacity:0;transition:opacity .3s;pointer-events:none;z-index:1}
+.project-box:hover::before{opacity:1}
+.project-box:hover img{transform:scale(1.05)}
+.project-box:hover{border-color:#5eead4;box-shadow:0 20px 40px rgba(94,234,212,.3)}
+.project-box.card.active{transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(0)}
+.project-box.card.tilting{transition:transform .1s ease-out,box-shadow .3s,border-color .3s}
+.project-box h3{position:relative;z-index:2;padding:15px 0;font-size:18px;color:#5eead4;letter-spacing:.03em;transition:letter-spacing .4s}
+.project-box:hover h3{letter-spacing:.12em}
+
+/* CONTACT: spotlight card, underline fields, fill button */
+#contact form,.contact-social-card{position:relative;width:400px;max-width:100%;margin:30px auto;padding:25px;border-radius:1rem;background:#16223a;border:1px solid #5eead4;display:flex;flex-direction:column;gap:14px;animation:breathe 3s ease-in-out infinite alternate;overflow:hidden}
+@keyframes breathe{from{box-shadow:0 0 8px rgba(94,234,212,.15)}to{box-shadow:0 0 28px rgba(94,234,212,.45)}}
+#contact form::before,.contact-social-card::before{content:"";position:absolute;inset:0;background:radial-gradient(circle 160px at var(--mx,50%) var(--my,50%),rgba(94,234,212,.18),transparent);opacity:0;transition:opacity .3s;pointer-events:none}
+#contact form:hover::before,.contact-social-card:hover::before{opacity:1}
+#contact input,#contact textarea{width:100%;padding:12px 4px;border:none;border-bottom:2px solid #8fa0ba;border-radius:0;background:transparent linear-gradient(#5eead4,#5eead4) no-repeat left bottom/0 2px;color:white;transition:background-size .4s ease,border-color .3s}
+#contact input::placeholder,#contact textarea::placeholder{color:#c0cad9}
+#contact textarea{height:100px;resize:vertical}
+#contact input:focus,#contact textarea:focus{background-size:100% 2px;outline:none}
+.form-bottom{display:flex;flex-direction:column;align-items:flex-start;gap:15px;margin-top:10px}
+#contact button{width:140px;padding:10px;border:2px solid #5eead4;border-radius:.6rem;background:linear-gradient(#5eead4,#5eead4) no-repeat left/0% 100%;color:#5eead4;font-weight:700;cursor:pointer;transition:background-size .4s ease,color .4s ease,transform .2s}
+#contact button:hover{background-size:100% 100%;color:#04211d;transform:scale(1.05)}
+#contact button:active{transform:scale(.96)}
+#contact button:focus-visible{outline:3px solid #8fb8ff;outline-offset:3px}
+.contact-social-card{margin:25px auto;padding:20px}
+.contact-social-card h3{position:relative;text-align:center;color:#5eead4;margin-bottom:5px}
+.social-btn{position:relative;display:flex;align-items:center;gap:10px;width:100%;padding:12px;border-radius:10px;text-decoration:none;color:white;font-weight:500;transition:transform .25s,box-shadow .25s}
+.social-btn i{transition:transform .3s}
+.social-btn:hover{transform:scale(1.05);box-shadow:0 0 18px rgba(94,234,212,.6)}
+.social-btn:hover i{animation:bounce .5s}
+@keyframes bounce{0%,100%{transform:translateY(0)}40%{transform:translateY(-8px)}70%{transform:translateY(2px)}}
+.social-btn:focus-visible{outline:3px solid #8fb8ff;outline-offset:3px}
+.facebook{background:#1877f2}
+.instagram{background:linear-gradient(45deg,#f09433,#dc2743,#bc1888)}
+.tiktok{background:black;border:1px solid #5eead4}
+/* form fields slide in one by one when the section appears */
+#contact.active form>*{animation:fieldIn .6s ease both}
+#contact.active form>:nth-child(1){animation-delay:.1s}
+#contact.active form>:nth-child(2){animation-delay:.25s}
+#contact.active form>:nth-child(3){animation-delay:.4s}
+#contact.active form>.form-bottom{animation-delay:.55s}
+@keyframes fieldIn{from{opacity:0;transform:translateX(-30px)}to{opacity:1;transform:translateX(0)}}
+
+footer{text-align:center;padding:20px;opacity:.6}
+
+/* MODAL */
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);justify-content:center;align-items:center;z-index:9999;opacity:0;transition:opacity .3s ease}
+.modal.show{display:flex;opacity:1}
+.modal-box{background:transparent;padding:30px;border-radius:15px;text-align:center;max-width:80%;display:flex;flex-wrap:wrap;justify-content:center;gap:40px;position:relative}
+.modal-box img{width:300px;height:300px;object-fit:cover;border-radius:10px;box-shadow:0 0 15px #5eead4;transition:transform .3s;cursor:pointer;margin:15px;max-width:90vw;max-height:80vh}
+.modal-box img:hover{transform:scale(1.2)}
+.close{position:absolute;top:15px;right:25px;font-size:35px;color:white;cursor:pointer;user-select:none}
+
+/* ANIMATIONS */
+.hero-left,.hero-right{opacity:0;transform:translateY(60px)}
+.profile-img{transform:scale(.8);opacity:0}
+.hero-left.show,.hero-right.show{opacity:1;transform:translateY(0);transition:all 1s ease}
+.profile-img.show{opacity:1;transform:scale(1);transition:all 1.2s ease}
+.reveal{opacity:0;transform:translateY(60px);transition:all 1s ease}
+.reveal.active{opacity:1;transform:translateY(0)}
+.card{opacity:0;transform:translateY(40px);transition:all .6s ease}
+.card.active{opacity:1;transform:translateY(0)}
+
+@media(max-width:768px){
+  nav ul{gap:15px;font-size:14px}
+  h1{font-size:28px}
+  .modal-box img{width:45%;height:auto}
+  #home{flex-direction:column-reverse;text-align:left;padding-top:6rem}
+  .profile-img{width:14rem;height:14rem}
+}
+
+/* ===== SHARED EFFECTS (About, Skills, headings, photos) ===== */
+/* scroll-in + hover lift/glow for About and Skills cards */
+.fx{opacity:0;transform:translateY(40px);transition:opacity .6s ease,transform .6s ease,box-shadow .3s ease,border-color .3s ease}
+.fx.active{opacity:1;transform:translateY(0)}
+.fx.active:hover{transform:translateY(-8px);border-color:#5eead4;box-shadow:0 0 20px rgba(94,234,212,.45)}
+.fx h3{transition:color .3s}
+.fx.active:hover h3{color:#5eead4}
+
+/* soft glow on section headings and their underline bars */
+.sec-title,.about-intro h2{animation:softGlow 2s ease-in-out infinite alternate}
+@keyframes softGlow{
+  from{text-shadow:0 0 4px rgba(94,234,212,.25)}
+  to{text-shadow:0 0 14px rgba(94,234,212,.7)}
+}
+.sec-title::after,.about-intro h2::after{box-shadow:0 0 10px #5eead4;transition:width .4s ease}
+.sec-title:hover::after,.about-intro h2:hover::after{width:6rem}
+
+/* photo glow on hover */
+.about-photo{transition:transform .4s ease,box-shadow .4s ease}
+.about-photo:hover{transform:scale(1.04);box-shadow:0 0 25px rgba(94,234,212,.6)}
+.profile-img.show:hover{transform:scale(1.04);box-shadow:0 0 25px rgba(94,234,212,.6)}
+
+/* nav underline slide */
+nav a{position:relative}
+nav a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;background:#5eead4;transition:width .3s ease}
+nav a:hover::after{width:100%}
+
+/* respect reduced-motion settings */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition-duration:.01ms!important;transition-delay:0s!important}
+  .fx,.reveal,.card{opacity:1;transform:none}
+}
+
+/* ===== UNIFIED CARD EFFECTS (same for About, Skills, Projects, Contact) ===== */
+.card,.fx,#contact form,.contact-social-card{position:relative;overflow:hidden;border:1px solid #8fa0ba;border-radius:1rem;background:#16223a;animation:none}
+.card::before,.fx::before,#contact form::before,.contact-social-card::before{content:"";position:absolute;inset:0;background:radial-gradient(circle 180px at var(--mx,50%) var(--my,50%),rgba(94,234,212,.22),transparent);opacity:0;transition:opacity .3s;pointer-events:none;z-index:1}
+.card:hover::before,.fx:hover::before,#contact form:hover::before,.contact-social-card:hover::before{opacity:1}
+.card:hover,.fx.active:hover,#contact form:hover,.contact-social-card:hover{border-color:#5eead4;box-shadow:0 20px 40px rgba(94,234,212,.3)}
+.card.active,.fx.active{transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(0)}
+#contact form,.contact-social-card{transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .5s ease,box-shadow .3s,border-color .3s}
+.card.tilting,.fx.tilting,#contact form.tilting,.contact-social-card.tilting{transition:transform .1s ease-out,box-shadow .3s,border-color .3s}
+/* card titles react the same way */
+.card h3,.fx h3,.contact-social-card h3{position:relative;z-index:2;transition:letter-spacing .4s,color .3s}
+.card:hover h3,.fx:hover h3,.contact-social-card:hover h3{letter-spacing:.08em;color:#5eead4}
+
+/* ===== HOME OPENING EFFECTS (v3) ===== */
+/* 1. loader: cyan bar fills, then the black screen fades away */
+body::before{content:"";position:fixed;inset:0;background:#000;z-index:10000;pointer-events:none;animation:loaderOut .6s ease 1.3s forwards}
+body::after{content:"";position:fixed;left:50%;top:50%;width:220px;height:3px;margin-left:-110px;background:#5eead4;box-shadow:0 0 15px #5eead4;border-radius:3px;z-index:10001;pointer-events:none;transform-origin:left;animation:barFill 1.2s ease forwards,barOut .3s ease 1.2s forwards}
+@keyframes barFill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes barOut{to{opacity:0}}
+@keyframes loaderOut{to{opacity:0;visibility:hidden}}
+
+/* 2. faint cyan dot grid drifting in the background */
+html::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(rgba(94,234,212,.18) 1px,transparent 1px) 0 0/32px 32px;-webkit-mask-image:radial-gradient(ellipse at center,#000 20%,transparent 75%);mask-image:radial-gradient(ellipse at center,#000 20%,transparent 75%);animation:gridPan 20s linear infinite}
+@keyframes gridPan{to{background-position:32px 32px}}
+
+/* 3. hero text: each part enters from a different direction */
+#home .intro{animation:slideL .7s ease 1.7s backwards}
+@keyframes slideL{from{opacity:0;transform:translateX(-40px)}to{opacity:1;transform:none}}
+#home .hero-name{min-height:1.05em;background:linear-gradient(100deg,#eef2f8 40%,#5eead4 50%,#eef2f8 60%) 100% 0/250% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;animation:nameIn 1s ease 1.9s backwards,shine 1.6s ease 3.1s backwards}
+@keyframes nameIn{from{opacity:0;letter-spacing:.35em;filter:blur(8px)}to{opacity:1;letter-spacing:0;filter:blur(0)}}
+@keyframes shine{from{background-position:100% 0}to{background-position:0 0}}
+#home .lead{animation:blurIn .9s ease 2.5s backwards}
+@keyframes blurIn{from{opacity:0;filter:blur(8px);transform:translateY(15px)}to{opacity:1;filter:blur(0);transform:none}}
+#home .hero-actions .btn{animation:slideR .6s ease backwards}
+#home .hero-actions .btn:nth-child(1){animation-delay:2.9s}
+#home .hero-actions .btn:nth-child(2){animation-delay:3.1s}
+@keyframes slideR{from{opacity:0;transform:translateX(40px)}to{opacity:1;transform:none}}
+
+/* 4. rotating cyan ring (Home photo + About photo) */
+.hero-right{position:relative;line-height:0}
+.profile-img{display:block}
+.hero-right::before,.about-photo-wrap::before{content:"";position:absolute;inset:-12px;border-radius:50%;background:conic-gradient(#5eead4,transparent 30%,#99f6e4 55%,transparent 80%,#5eead4);-webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 4px),#000 calc(100% - 3px));mask:radial-gradient(farthest-side,transparent calc(100% - 4px),#000 calc(100% - 3px));animation:spin 4s linear infinite,ringIn 1s ease 2.6s backwards}
+.about-photo-wrap::before{animation:spin 4s linear infinite,ringIn 1s ease .3s backwards}
+.about-photo-wrap{position:relative;justify-self:center;width:min(100%,20rem);line-height:0}
+.about-photo-wrap .about-photo{display:block;width:100%}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes ringIn{from{opacity:0}}
+
+@media (prefers-reduced-motion:reduce){body::before,body::after{display:none}}
+/* ===== CONTACT FORM STATUS MESSAGE ===== */
+.form-status{min-height:1.4em;margin:0;font-family:"Segoe UI",system-ui,Arial,sans-serif;font-size:.95rem;line-height:1.4;color:#c0cad9}
+.form-status.success{color:#5eead4}
+.form-status.error{color:#ff9a9a}
+#contact button:disabled{opacity:.6;cursor:not-allowed;transform:none}
